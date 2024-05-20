@@ -13,7 +13,6 @@ export class ConfigService implements TypeOrmOptionsFactory {
   createTypeOrmOptions(): TypeOrmModuleOptions {
     return {
       type: 'mysql',
-      host: 'db',
       port: 3306,
       username: 'root',
       password: 'brx',
@@ -21,8 +20,6 @@ export class ConfigService implements TypeOrmOptionsFactory {
       entities: [User, Repository],
       synchronize: true,
       autoLoadEntities: true,
-      retryAttempts: 5, // the number of times to retry connection
-      retryDelay: 3000, // delay between connection retries (ms)
     };
   }
 }
